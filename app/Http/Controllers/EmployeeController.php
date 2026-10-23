@@ -8,7 +8,7 @@ use App\Models\Employee;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class EmployeeWebController extends Controller
+class EmployeeController extends Controller
 {
     public function index(): Response
     {

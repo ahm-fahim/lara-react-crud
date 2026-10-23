@@ -5,9 +5,9 @@ use App\Http\Controllers\EmployeeWebController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-// Redirect root to login page by default
+// Redirect root: if authenticated go to employees, otherwise to login
 Route::get('/', function () {
-    return redirect('/login');
+    return auth()->check() ? redirect('/employees') : redirect('/login');
 });
 
 // Guest Routes (Accessible only when logged out)
