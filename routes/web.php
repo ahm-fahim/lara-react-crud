@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmployeeWebController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,5 @@ Route::middleware('auth')->group(function () {
     // Resource CRUD routes
     Route::resource('users', UserController::class)->except(['create', 'edit', 'show']);
     Route::resource('employees', EmployeeWebController::class)->except(['create', 'edit', 'show']);
+    Route::resource('products', ProductController::class)->except(['create', 'edit', 'show']);
 });

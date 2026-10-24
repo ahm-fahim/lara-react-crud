@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: lara_react_db
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_USER: fahim
       MYSQL_PASSWORD: password
     ports:
@@ -20,8 +20,6 @@ services:
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
-      PMA_USER: root
-      PMA_PASSWORD: root
       UPLOAD_LIMIT: 64M
     ports:
       - "8080:80"
